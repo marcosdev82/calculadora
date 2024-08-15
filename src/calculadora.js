@@ -9,6 +9,10 @@ function Calculadora() {
 
   const [textNumeros, setTxtNumeros] = useState('0');
 
+  function adicionarNumero(numero) {
+    setTxtNumeros(textNumeros + numero)
+  }
+
   return (
     <Container style={{
       background: 'transparent!important',
@@ -34,13 +38,13 @@ function Calculadora() {
 
         <Row>
           <Col>
-            <Button variant='light'>7</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('7')}}>7</Button>
           </Col>
           <Col>
-            <Button variant='light'>8</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('8')}}>8</Button>
           </Col>
           <Col>
-            <Button variant='light'>9</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('9')}}>9</Button>
           </Col>
           <Col>
             <Button variant='warning'>/</Button>
@@ -49,13 +53,13 @@ function Calculadora() {
 
         <Row>
           <Col>
-            <Button variant='light'>4</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('4')}}>4</Button>
           </Col>
           <Col>
-            <Button variant='light'>5</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('5')}}>5</Button>
           </Col>
           <Col>
-            <Button variant='light'>6</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('6')}}>6</Button>
           </Col>
           <Col>
             <Button variant='warning'>*</Button>
@@ -64,13 +68,13 @@ function Calculadora() {
 
         <Row>
           <Col>
-            <Button variant='light'>1</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('1')}}>1</Button>
           </Col>
           <Col>
-            <Button variant='light'>2</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('2')}}>2</Button>
           </Col>
           <Col>
-            <Button variant='light'>3</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('3')}}>3</Button>
           </Col>
           <Col>
             <Button variant='warning'>-</Button>
@@ -79,7 +83,7 @@ function Calculadora() {
 
         <Row>
           <Col>
-            <Button variant='light'>0</Button>
+            <Button variant='light' onClick={() => {adicionarNumero('0')}}>0</Button>
           </Col>
           <Col>
             <Button variant='light'>.</Button>
