@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './calculadora.css';
 import { 
   Container, Row, Col, Button, 
@@ -5,6 +6,9 @@ import {
 } from 'react-bootstrap'; 
 
 function Calculadora() {
+
+  const [textNumeros, setTxtNumeros] = useState('0');
+
   return (
     <Container style={{
       background: 'transparent!important',
@@ -21,8 +25,10 @@ function Calculadora() {
           <Col xs="9">
             <Form.Control type='text'
               name='textNumeros'
-              class='text-right'
-              readOnly='readonly' />
+              className='text-right'
+              readOnly='readonly' 
+              value={textNumeros}
+            />
           </Col>
         </Row>
 
