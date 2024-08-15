@@ -13,6 +13,10 @@ function Calculadora() {
     setTxtNumeros(textNumeros + numero)
   }
 
+  function definirOperacao(op) {
+    setTxtNumeros(op);
+  }
+
   return (
     <Container style={{
       background: 'transparent!important',
@@ -47,7 +51,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('9')}}>9</Button>
           </Col>
           <Col>
-            <Button variant='warning'>/</Button>
+            <Button variant='warning' onClick={() => definirOperacao('/')}>/</Button>
           </Col>
         </Row>
 
@@ -62,7 +66,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('6')}}>6</Button>
           </Col>
           <Col>
-            <Button variant='warning'>*</Button>
+            <Button variant='warning' onClick={() => definirOperacao('*')}>*</Button>
           </Col>
         </Row>
 
@@ -77,7 +81,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('3')}}>3</Button>
           </Col>
           <Col>
-            <Button variant='warning'>-</Button>
+            <Button variant='warning'  onClick={() => definirOperacao('-')}>-</Button>
           </Col>
         </Row>
 
@@ -86,13 +90,13 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('0')}}>0</Button>
           </Col>
           <Col>
-            <Button variant='light'>.</Button>
+            <Button variant='light'  onClick={() => definirOperacao('.')}>.</Button>
           </Col>
           <Col>
-            <Button variant='success'>=</Button>
+            <Button variant='success'  onClick={() => definirOperacao('=')}>=</Button>
           </Col>
           <Col>
-            <Button variant='warning'>+</Button>
+            <Button variant='warning'  onClick={() => definirOperacao('+')}>+</Button>
           </Col>
         </Row>
       </Container>
