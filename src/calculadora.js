@@ -15,12 +15,13 @@ function Calculadora() {
   const [numero2, setNumero2] = useState(null);
   const [operacao, setOperacao] = useState(null);
 
-
+ 
   function adicionarNumero(numero) {
     let resultado;
     if (operacao === null) {
-      resultado = concatenaNumero(numero2, numero);
-      setNumero2(resultado);
+      resultado = concatenaNumero(numero1, numero);
+      setNumero1(resultado);
+      console.log(resultado)
     } else {
       resultado = concatenaNumero(numero2, numero);
       setNumero2(resultado);
@@ -47,10 +48,10 @@ function Calculadora() {
           </Col>
           <Col xs="9">
             <Form.Control type='text'
-              name='textNumeros'
+              name='txtNumeros'
               className='text-right'
               readOnly='readonly' 
-              value={textNumeros}
+              value={txtNumeros}
             />
           </Col>
         </Row>
