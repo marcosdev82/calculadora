@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import CalculadoraService from "./calculadora.service";
 
-
 describe('Teste do CalculadoraService', () => {
     // recebe uma referência do calcular
-    const [calcular, SOMA, SUBTRACAO, DIVISAO, MULTIPLICACAO] = CalculadoraService();
+    const [calcular, concatenaNumero, SOMA, SUBTRACAO, DIVISAO, MULTIPLICACAO] = CalculadoraService();
 
     it('deve garantir 1 + 4 = 5.', () => {
         let soma = calcular(1, 4, SOMA);

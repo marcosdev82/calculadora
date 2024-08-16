@@ -4,13 +4,28 @@ import {
   Container, Row, Col, Button, 
   Form
 } from 'react-bootstrap'; 
+import CalculadoraService from './calculadora.service';
 
 function Calculadora() {
 
-  const [textNumeros, setTxtNumeros] = useState('0');
+  const [calcular, concatenaNumero, SOMA, SUBTRACAO, DIVISAO, MULTIPLICACAO] = CalculadoraService();
+  
+  const [txtNumeros, setTxtNumeros] = useState('0');
+  const [numero1, setNumero1] = useState('0');
+  const [numero2, setNumero2] = useState(null);
+  const [operacao, setOperacao] = useState(null);
+
 
   function adicionarNumero(numero) {
-    setTxtNumeros(textNumeros + numero)
+    let resultado;
+    if (operacao === null) {
+      resultado = concatenaNumero(numero2, numero);
+      setNumero2(resultado);
+    } else {
+      resultado = concatenaNumero(numero2, numero);
+      setNumero2(resultado);
+    }
+    setTxtNumeros(resultado);
   }
 
   function definirOperacao(op) {
