@@ -29,9 +29,30 @@ function CalculadoraService() {
         return resultado;
     }
 
+    function concatenaNumero(numeroAtual, numeroConcat) {
+        // caso contenha '0' ou null, reinicia o valor
+        if (numeroAtual === '0' || numeroAtual === null) {
+          numeroAtual = '';
+        }
+    
+        // precisa digitar '.', concatena 0 antes do ponto
+        if (numeroAtual === '.' && numeroAtual === '') {
+          numeroAtual = '0.';
+        }
+    
+        if (numeroConcat === '.' && numeroAtual.indexOf('.') >= -1) {
+          return numeroAtual;
+        }
+    
+        return numeroAtual + numeroConcat;
+    
+        // caso '.' digitado e já contenha um ponto, apenas retorna
+      }
+
     // retorna uma referência do calcular
     return [
         calcular,
+        concatenaNumero,
         SOMA,
         SUBTRACAO,
         DIVISAO,
