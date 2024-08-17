@@ -41,6 +41,17 @@ function Calculadora() {
       setNumero2(null);
       setTxtNumeros(resultado.toString());
     } 
+
+  }
+
+  function acaoCalcular() {
+    if (numero1 === null) {
+      return;
+    }
+
+    const resultado = calcular(parseFloat(numero1), parseFloat(numero2), operacao)
+    setTxtNumeros(resultado);
+
   }
 
   return (
@@ -119,7 +130,7 @@ function Calculadora() {
             <Button variant='light'  onClick={() => adicionarNumero('.')}>.</Button>
           </Col>
           <Col>
-            <Button variant='success'  onClick={() => definirOperacao('=')}>=</Button>
+            <Button variant='success'  onClick={acaoCalcular}>=</Button>
           </Col>
           <Col>
             <Button variant='warning'  onClick={() => definirOperacao('+')}>+</Button>
