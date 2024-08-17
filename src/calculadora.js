@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import './calculadora.css';
 import { 
-  Container, Row, Col, Button, 
-  Form
+  Container, Row, Col, Button, Form
 } from 'react-bootstrap'; 
 import CalculadoraService from './calculadora.service';
 
@@ -21,7 +20,6 @@ function Calculadora() {
     if (operacao === null) {
       resultado = concatenaNumero(numero1, numero);
       setNumero1(resultado);
-      console.log(resultado)
     } else {
       resultado = concatenaNumero(numero2, numero);
       setNumero2(resultado);
@@ -30,7 +28,9 @@ function Calculadora() {
   }
 
   function definirOperacao(op) {
-    setTxtNumeros(op);
+    // apenas define a operação caso ela não exista 
+
+    // caso operação estiver definida e número 2 seleciona, realiza o calculo da operação
   }
 
   return (
@@ -106,7 +106,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('0')}}>0</Button>
           </Col>
           <Col>
-            <Button variant='light'  onClick={() => definirOperacao('.')}>.</Button>
+            <Button variant='light'  onClick={() => adicionarNumero('.')}>.</Button>
           </Col>
           <Col>
             <Button variant='success'  onClick={() => definirOperacao('=')}>=</Button>

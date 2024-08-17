@@ -36,11 +36,11 @@ function CalculadoraService() {
         }
     
         // precisa digitar '.', concatena 0 antes do ponto
-        if (numeroAtual === '.' && numeroAtual === '') {
+        if (numeroConcat === '.' && numeroAtual === '') {
           numeroAtual = '0.';
         }
     
-        if (numeroConcat === '.' && numeroAtual.indexOf('.') >= -1) {
+        if (numeroConcat === '.' && numeroAtual.indexOf('.') > -1) {
           return numeroAtual;
         }
     
