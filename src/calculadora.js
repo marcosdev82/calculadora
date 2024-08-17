@@ -29,8 +29,18 @@ function Calculadora() {
 
   function definirOperacao(op) {
     // apenas define a operação caso ela não exista 
-
+    if (operacao === null) {
+      setOperacao(op);
+      return;
+    }
     // caso operação estiver definida e número 2 seleciona, realiza o calculo da operação
+    if (numero2 !== null) {
+      const resultado = calcular(parseFloat(numero1), parseFloat(numero2), operacao)
+      setOperacao(op);
+      setNumero1(resultado.toString());
+      setNumero2(null);
+      setTxtNumeros(resultado.toString());
+    } 
   }
 
   return (
