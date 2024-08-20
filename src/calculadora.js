@@ -95,7 +95,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('9')}}>9</Button>
           </Col>
           <Col>
-            <Button variant='warning' onClick={() => definirOperacao('/')}>/</Button>
+            <Button variant='warning' onClick={() => definirOperacao(DIVISAO)}>/</Button>
           </Col>
         </Row>
 
@@ -110,7 +110,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('6')}}>6</Button>
           </Col>
           <Col>
-            <Button variant='warning' onClick={() => definirOperacao('*')}>*</Button>
+            <Button variant='warning' onClick={() => definirOperacao(MULTIPLICACAO)}>*</Button>
           </Col>
         </Row>
 
@@ -125,7 +125,7 @@ function Calculadora() {
             <Button variant='light' onClick={() => {adicionarNumero('3')}}>3</Button>
           </Col>
           <Col>
-            <Button variant='warning'  onClick={() => definirOperacao('-')}>-</Button>
+            <Button variant='warning'  onClick={() => definirOperacao(SUBTRACAO)}>-</Button>
           </Col>
         </Row>
 
@@ -140,7 +140,7 @@ function Calculadora() {
             <Button variant='success'  onClick={acaoCalcular}>=</Button>
           </Col>
           <Col>
-            <Button variant='warning'  onClick={() => definirOperacao('+')}>+</Button>
+            <Button variant='warning'  onClick={() => definirOperacao(SOMA)}>+</Button>
           </Col>
         </Row>
       </Container>
